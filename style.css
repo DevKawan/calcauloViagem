@@ -1,0 +1,210 @@
+
+    /* Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      
+      body {
+        background: #16161a;
+        color: #fffffe;
+        overflow-x: hidden;
+        min-height: 100vh;
+        position: relative;
+      }
+      
+      /* Fundo com parallax e estrelas maiores e mais espaçadas */
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(white 1.2px, transparent 2px);
+        background-size: 40px 40px;
+        z-index: -1;
+        animation: star-move 100s linear infinite;
+        opacity: 0.07;
+      }
+      
+      @keyframes star-move {
+        from {
+          transform: translate(0, 0);
+        }
+        to {
+          transform: translate(-300px, -600px);
+        }
+      }
+      
+      /* Menu lateral fixo */
+      nav.home {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 220px;
+        height: 100vh;
+        background-color: #1f1f24;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 1rem;
+        gap: 1.5rem;
+        z-index: 10;
+        border-right: 1px solid #4e4e4e;
+        box-shadow: 0 0 25px rgba(82, 67, 122, 0.342);
+      }
+      
+      nav.home a {
+        color: #fffffe;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+      
+      nav.home a:hover {
+        color: #7f5af0;
+      }
+      
+      /* Corpo central */
+      main.corpo {
+        margin-left: 240px;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        text-align: center;
+        position: relative;
+      }
+      
+      /* Card com efeito glass e sombra */
+      .card {
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(12px);
+        border-radius: 16px;
+        box-shadow: 0 0 25px rgba(127, 90, 240, 0.2);
+        padding: 2rem;
+        width: 100%;
+        max-width: 500px;
+      }
+      
+      /* Título */
+      .fonte h4 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      /* Inputs */
+      .inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      
+      .inputs label {
+        margin-bottom: 0.5rem;
+        display: block;
+        font-weight: bold;
+      }
+      
+      .inputs input {
+        padding: 0.5rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        width: 100%;
+      }
+      
+      /* Botão */
+      .botao {
+        margin-top: 2rem;
+      }
+      
+      .botao button {
+        padding: 0.75rem 1.5rem;
+        background-color: #7f5af0;
+        color: #fffffe;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+      
+      .botao button:hover {
+        background-color: #6a42e0;
+      }
+      
+      /* Resultado */
+      .card.resultado h2 {
+        font-size: 2rem;
+        color: #fffffe;
+        margin-bottom: 1rem;
+      }
+      
+      .card.resultado span {
+        color: #7f5af0;
+      }
+      
+      /* Fogos */
+      .fogos {
+        position: absolute;
+        top: 0;
+        left: 240px;
+        width: calc(100% - 240px);
+        height: 100%;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 0;
+      }
+      
+      .fogo {
+        position: absolute;
+        bottom: 0;
+        width: 8px;
+        height: 8px;
+        background-color: #7f5af0;
+        border-radius: 50%;
+        animation: subir 2s ease-out forwards;
+        opacity: 0.8;
+      }
+      
+      @keyframes subir {
+        0% {
+          transform: translateY(0) scale(1);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-800px) scale(0);
+          opacity: 0;
+        }
+      }
+      
+      /* Responsivo */
+      @media (max-width: 768px) {
+        nav.home {
+          position: relative;
+          width: 100%;
+          height: auto;
+          flex-direction: row;
+          justify-content: space-around;
+          padding: 1rem;
+        }
+      
+        main.corpo {
+          margin-left: 0;
+          padding: 1rem;
+        }
+      
+        .fogos {
+          left: 0;
+          width: 100%;
+        }
+      
+        .card {
+          padding: 1.5rem;
+          margin-top: 2rem;
+        }
+      }

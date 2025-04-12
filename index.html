@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Cálculo de viagens!</title>
+</head>
+<body>
+  <nav class="home">
+    <a href="#">Início</a>
+    <a href="#">Sobre</a>
+    <a href="#">Como me achar?</a>
+    <a href="#">Quem sou eu?</a>
+  </nav>
+  <main class="corpo">
+    <div class="card" id="formCard">
+      <div class="fonte">
+        <h4>Cálculo de viagens</h4>
+      </div>
+      <div class="inputs">
+        <div class="input-gasolina">
+          <label>Quanto custa a gasolina?</label>
+          <input type="number" id="gasolina" placeholder="Digite aqui">
+        </div>
+        <div class="input-gasolinaMediaPorKm">
+          <label>Quanto seu carro gasta por KM?</label>
+          <input type="number" id="medioKm" placeholder="Digite aqui">
+        </div>
+        <div class="input-kmTotalViagem">
+          <label>Qual KM <strong>total</strong> da viagem?</label>
+          <input type="number" id="distanciaViagemKm" placeholder="Digite aqui">
+        </div>
+      </div>
+      <div class="botao">
+        <button type="button" onclick="calcularGasto()">Calcular</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="./Desafio001.js"></script>
+
+</body>
+</html>
